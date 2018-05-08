@@ -17,11 +17,6 @@
     width: 100%;
 }
 
-html {
-  background: url(images/backgroundDay.jpg) no-repeat center center fixed; 
-  background-size: cover;
-}
-
 #image img {
 /* the actual 'watermark' */
 height: 75px;
