@@ -3,97 +3,88 @@
 {% block content %}
 
 <div class="container-fluid" id="index" style="margin-top: 70px">
-    <div class="row">
-        <div class="col-9">
-          <div class="w3-content w3-display-container" style="max-width:800px">
-            <img class="mySlides" src="images/index-1.jpg" style="width:100%">
-            <img class="mySlides" src="images/index-2.jpg" style="width:100%">
-            <img class="mySlides" src="images/index-3.jpg" style="width:100%">
-              <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-              </div>
-          </div>
-          <script>
-            var myIndex = 0;
-            carousel();
-
-            function carousel() {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                for (i = 0; i < x.length; i++) {
-                   x[i].style.display = "none";
-                }
-                myIndex++;
-                if (myIndex > x.length) {myIndex = 1}
-                x[myIndex-1].style.display = "block";
-                setTimeout(carousel, 2000); // Change image every 2 seconds
-            }
-          </script>
-          <script>
-            var slideIndex = 1;
-            showDivs(slideIndex);
-
-            function plusDivs(n) {
-            showDivs(slideIndex += n);
-            }
-
-            function currentDiv(n) {
-            showDivs(slideIndex = n);
-            }
-
-            function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) {
-               x[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-               dots[i].className = dots[i].className.replace(" w3-white", "");
-            }
-            x[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " w3-white";
-            }
-          </script>
+  <div class="row">
+    <div class="col-9">
+      <div class="w3-content w3-display-container" style="max-width:100%">
+        <img class="mySlides" src="images/index-1.jpg" style="width:100%">
+        <img class="mySlides" src="images/index-2.jpg" style="width:100%">
+        <img class="mySlides" src="images/index-3.jpg" style="width:100%">
+        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+          <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+          <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
         </div>
-        <div class="col-3">
-            <a class="twitter-timeline" data-width="300" data-height="550" data-theme="light" href="https://twitter.com/inforugbyreport?ref_src=twsrc%5Etfw">Tweets by inforugbyreport</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
+      </div>
+      <script>
+      var myIndex = 1;
+      carousel();
+
+      function carousel() {
+        plusDivs(myIndex);
+        setTimeout(carousel, 3000); // Change image every 2 seconds
+      }
+
+      var slideIndex = 1;
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+        showDivs(slideIndex = n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-white";
+      }
+      </script>
     </div>
-    <hr style="border:4px;">
-    <div id="espacioTabla">
-        <h4 id="etiquetaUltimaFecha" style="text-align: center"><b>Última Fecha: Fecha {{fecha}}</b></h4>
-        <table class='table table-hover' id='tablaIndex'>
-          <thead class='thead-light'>
-            <tr>
-              <th scope='col'>Partido</th>
-              <th scope='col' style='text-align: right'>Local</th>
-              <th scope='col'>Visitante</th>
-              <th scope='col'>Resultado</th>
-              <th scope='col'>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% set index = 1 %}
-            {% for partido in partidos %}
-              <tr>
-                <td>{{index}}</td>
-                <td style="text-align: right"> {{partido.local.nombre}}<img HEIGHT="30" WIDTH="30" SRC="images/{{partido.local.escudo}}"></td>
-                <td><img HEIGHT="30" WIDTH="30" SRC="images/{{partido.visitante.escudo}}">{{partido.visitante.nombre}}</td>
-                <td>{{partido.puntosLocal}} - {{partido.puntosVisitante}}</td>
-                <td>{{partido.estado}}</td>
-              </tr>
-            {% set index = index+1 %}
-            {% endfor %}
-          </tbody>
-        </table>
+    <div class="col-3">
+      <a class="twitter-timeline" data-width="300" data-height="550" data-theme="light" href="https://twitter.com/inforugbyreport?ref_src=twsrc%5Etfw">Tweets by inforugbyreport</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
+  </div>
+  <hr style="border:4px;">
+  <div id="espacioTabla">
+    <h4 id="etiquetaUltimaFecha" style="text-align: center"><b>Última Fecha: Fecha {{fecha}}</b></h4>
+    <table class='table table-hover' id='tablaIndex'>
+      <thead class='thead-light'>
+        <tr>
+          <th scope='col'>Partido</th>
+          <th scope='col' style='text-align: right'>Local</th>
+          <th scope='col'>Visitante</th>
+          <th scope='col'>Resultado</th>
+          <th scope='col'>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% set index = 1 %}
+        {% for partido in partidos %}
+        <tr>
+          <td>{{index}}</td>
+          <td style="text-align: right"> {{partido.local.nombre}}<img HEIGHT="30" WIDTH="30" SRC="images/{{partido.local.escudo}}"></td>
+          <td><img HEIGHT="30" WIDTH="30" SRC="images/{{partido.visitante.escudo}}">{{partido.visitante.nombre}}</td>
+          <td>{{partido.puntosLocal}} - {{partido.puntosVisitante}}</td>
+          <td>{{partido.estado}}</td>
+        </tr>
+        {% set index = index+1 %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 
 

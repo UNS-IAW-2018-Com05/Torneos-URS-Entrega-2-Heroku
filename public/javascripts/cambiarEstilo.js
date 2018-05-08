@@ -5,6 +5,7 @@ $(document).ready(function(){
   if(localStorage.getItem("estilo")=="false"){
     $("#estilo2").prop('disabled', true);
   }
+  $("#cargador").show();
 });
 
 function CambiarEstilo(){
@@ -23,7 +24,7 @@ function CambiarEstilo(){
       }
     });
   }
-  
+
   else {
     $.get('./api/guardarEstilo', { id: 0 }, function(data) {
       console.log(data);
