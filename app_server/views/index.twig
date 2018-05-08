@@ -17,7 +17,22 @@
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
               </div>
           </div>
+          <script>
+            var myIndex = 0;
+            carousel();
 
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                   x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}
+                x[myIndex-1].style.display = "block";
+                setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+          </script>
           <script>
             var slideIndex = 1;
             showDivs(slideIndex);
@@ -46,6 +61,7 @@
             dots[slideIndex-1].className += " w3-white";
             }
           </script>
+        </div>
         <div class="col-3">
             <a class="twitter-timeline" data-width="300" data-height="550" data-theme="light" href="https://twitter.com/inforugbyreport?ref_src=twsrc%5Etfw">Tweets by inforugbyreport</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
@@ -79,5 +95,6 @@
         </table>
     </div>
 </div>
+
 
 {% endblock %}
