@@ -1,0 +1,24 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="row" id="cartas" style="margin-top: 70px">
+  {% for club in clubes %}
+  <div class="col-sm-3">
+    <div class="card">
+      <img class='card-im-top' src="images/{{club.escudo}}" alt='Card image cap'>
+      <div class="card-body">
+        <h5 class="card-title">
+          {{club.nombre}}
+        </h5>
+        <p class="card-text">
+          {{club.descripcion}}
+        </p>
+        <a class="btn btn-primary" href="{{club.link}}" target="_blank">
+          Sitio Web
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

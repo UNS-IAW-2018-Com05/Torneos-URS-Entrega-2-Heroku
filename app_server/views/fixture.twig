@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div>
+  <nav aria-label="Page navigation example" style="margin-top: 70px">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#" onclick="mostrarPartidos()">Anterior</a></li>
+      {% set index = 1 %}
+      {% for fecha in fechas %}
+        {% if index == fechaMasReciente %}
+          <li class="page-item active"><button class="page-link" id="{{fecha.numero}}" onclick="mostrarPartidos(this.id)">Fecha {{fecha.numero}}</a></li>
+        {% else %}
+          <li class="page-item"><button class="page-link" id="{{fecha.numero}}" onclick="mostrarPartidos(this.id)">Fecha {{fecha.numero}}</a></li>
+        {% endif %}
+        {% set index = index+1 %}
+      {% endfor %}
+      <li class="page-item"><a class="page-link" href="#" onclick="mostrarPartidos()">Siguiente</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="card-group">
+  {% set index = 1 %}
+  {% for partido in partidos %}
+    <div class="card" id="partido-{{index}}">
+      <img class="card-img-top" src="images/Ru_ball.svg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{partido.local.nombre}} - {{partido.visitante.nombre}}</h5>
+        <p class="card-text">{{partido.puntosLocal}} - {{partido.puntosVisitante}}</p>
+        <p class="card-text"><small class="text-muted">{{partido.estado}}</small></p>
+      </div>
+    </div>
+    {% set index = index+1 %}
+  {% endfor %}
+</div>
+
+{% endblock %}

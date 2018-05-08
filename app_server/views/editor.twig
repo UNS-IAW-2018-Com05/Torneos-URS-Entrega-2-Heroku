@@ -1,0 +1,53 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<style>
+.btn {
+    background-color: rgb(94, 94, 94); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+}
+</style>
+<div id="TablaPosiciones" style="margin-top: 70px">
+    <h4 id="etiquetaPosiciones" style="text-align: center"><b>Partidos para agregar Resultado</b></h4>
+</div>
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Local</th>
+        <th scope="col">Visitante</th>
+        <th scope="col">Puntos Local</th>
+        <th scope="col">Puntos Visitante</th>
+        <th scope="col">Guardar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% set index = 1 %}
+      {% for partido in partidos %}
+        <tr>
+          <td>{{partido._id}}</td>
+          <td> {{partido.local}}</td>
+          <td>{{partido.visitante}}</td>
+          <td><input type="number" class="form-control"></td>
+          <td><input type="number" class="form-control"></td>
+          <td>
+            <button class="btn" id="{{partido._id}}" onclick="guardarPartido(this)"><i class="far fa-save"></i></button>
+          </td>
+        </tr>
+      {% set index = index+1 %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script src="/javascripts/guardarPartido.js"></script>
+{% endblock %}

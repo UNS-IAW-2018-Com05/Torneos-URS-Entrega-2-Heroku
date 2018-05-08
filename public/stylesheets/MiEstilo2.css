@@ -1,0 +1,45 @@
+
+.navbar{
+
+    background-color: #491217;
+
+}
+
+.navbar-brand{
+    color:whitesmoke;
+}
+
+.nav-link{
+    color:whitesmoke;
+}
+
+.navbar-toggler{
+    background-color:whitesmoke;
+}
+
+body{
+
+    background-color: lightsalmon;
+    font-family: 'Bree Serif', serif;
+    color: black;
+
+}
+
+
+#btnCambiarEstilo {
+    background-color: transparent;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+}
+
+#tablaPosiciones{
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+}
+
+h1{
+
+  color: black;
+
+}
