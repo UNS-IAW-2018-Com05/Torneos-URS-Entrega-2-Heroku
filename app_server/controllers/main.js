@@ -50,6 +50,13 @@ function obtenerPartidos(fechaMasReciente){
              populate:[{ path: 'local', select: ['nombre','escudo']},{ path: 'visitante', select: ['nombre','escudo']}]
            }).
   exec(function (err, resultado) {
+    var index;
+    for(index=0;index<resultado.partidos.length;index++){
+      console.log(resultado.partidos[index].dia);
+        var fecha = moment(resultado.partidos[index].dia).format("YYYY-MM-DD");
+        resultado.partidos[index].push({fecha:fecha});
+    }
+    //console.log(resultado.partidos);
     ress.render('index', {
       title: 'Torneos URS',
       fecha: fechaReciente,
