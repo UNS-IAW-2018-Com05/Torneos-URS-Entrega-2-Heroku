@@ -17,22 +17,9 @@
     width: 100%;
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
-}
-
-.bg {
-    /* The image used */
-    background-image: url("images/backgroundDay.jpg");
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+html {
+  background: url(images/backgroundDay.jpg) no-repeat center center fixed; 
+  background-size: cover;
 }
 
 #image img {
