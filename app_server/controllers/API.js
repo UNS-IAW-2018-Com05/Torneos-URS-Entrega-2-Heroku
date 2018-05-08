@@ -35,22 +35,24 @@ const savePartido = function(req,res) {
 }
 
 const guardarEstilo = function(req,res){
-  console.log(req.query.id);
-  var data;
-  if(req.query.id == 1)
-    data = {estilo: true};
-  else {
-    data = {estilo: false}
+  if (req.user) {
+    var data;
+    if(req.query.id == 1)
+      data = {estilo: true};
+    else
+      data = {estilo: false};
+    User.findByIdAndUpdate(
+      req.user._id,
+      data,
+      (err, usuario) => {
+          if (err)
+            return res.status(500).send(err);
+          res.send('ok');
+      }
+    )
+ } else {
+    res.send('no');
   }
-  User.findByIdAndUpdate(
-    req.user._id,
-    data,
-    (err, usuario) => {
-        if (err)
-          return res.send('no');
-        res.send('ok');
-    }
-  )
 }
 
 module.exports = {
