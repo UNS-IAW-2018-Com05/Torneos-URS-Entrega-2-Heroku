@@ -5,7 +5,8 @@ var user;
 
 const edicion = function (req, res) {
   user = req.user;
-  var query = Partido.find({'estado':'no iniciado'});
+  var query = Partido.find({'estado':'no iniciado'})
+  .populate( [{ path: 'local', select: 'nombre'},{ path: 'visitante', select: 'nombre'}]);
   query.exec(function(err,partidos){
     if(err)
        return console.log(err);

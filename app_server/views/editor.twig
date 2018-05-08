@@ -2,7 +2,7 @@
 
 {% block content %}
 <style>
-.btn {
+.different {
     background-color: rgb(94, 94, 94); /* Blue background */
     border: none; /* Remove borders */
     color: white; /* White text */
@@ -12,7 +12,7 @@
 }
 
 /* Darker background on mouse-over */
-.btn:hover {
+.different:hover {
     background-color: RoyalBlue;
 }
 </style>
@@ -23,7 +23,7 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">ID Partido</th>
         <th scope="col">Local</th>
         <th scope="col">Visitante</th>
         <th scope="col">Puntos Local</th>
@@ -36,12 +36,12 @@
       {% for partido in partidos %}
         <tr>
           <td>{{partido._id}}</td>
-          <td> {{partido.local}}</td>
-          <td>{{partido.visitante}}</td>
+          <td> {{partido.local.nombre}}</td>
+          <td>{{partido.visitante.nombre}}</td>
           <td><input type="number" class="form-control"></td>
           <td><input type="number" class="form-control"></td>
           <td>
-            <button class="btn" id="{{partido._id}}" onclick="guardarPartido(this)"><i class="far fa-save"></i></button>
+            <button class="different" id="{{partido._id}}" onclick="guardarPartido(this)"><i class="far fa-save"></i></button>
           </td>
         </tr>
       {% set index = index+1 %}
