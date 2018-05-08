@@ -46,7 +46,8 @@ const guardarEstilo = function(req,res){
     req.user._id,
     data,
     (err, usuario) => {
-        if (err) return res.status(500).send(err);
+        if (err)
+          return res.send('no');
         res.send('ok');
     }
   )

@@ -9,6 +9,6 @@ router.get('/fecha', API.getFecha);
 
 router.post('/partidoNuevo', middleware, API.savePartido);
 
-router.get('/guardarEstilo',middleware, API.guardarEstilo);
+router.get('/guardarEstilo', API.guardarEstilo);
 
 module.exports = router;
