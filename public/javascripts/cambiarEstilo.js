@@ -8,10 +8,6 @@ $(document).ready(function(){
 
 });
 
-window.onload = function() {
- $("#cargador").show();
-};
-
 function CambiarEstilo(){
   var styleSheet = document.getElementById('estilo2');
 
