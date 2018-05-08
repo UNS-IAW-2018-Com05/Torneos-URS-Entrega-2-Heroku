@@ -16,6 +16,20 @@
         <a class="btn btn-primary" href="{{club.link}}" target="_blank">
           Sitio Web
         </a>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Plantel</button>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <ul class="list-group">
+                {% for jugador in club.jugadores %}
+                <li class="list-group-item">{{jugador.nombre}} {{jugador.apellido}}
+                  <small> {{jugador.posicion}} </small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
