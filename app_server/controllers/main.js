@@ -47,7 +47,7 @@ function obtenerPartidos(fechaMasReciente){
   Fecha.
   findOne({numero:fechaMasReciente}).
   populate({ path: 'partidos',
-             populate:[{ path: 'local', select: 'nombre'},{ path: 'visitante', select: 'nombre'}]
+             populate:[{ path: 'local', select: ['nombre','escudo']},{ path: 'visitante', select: ['nombre','escudo']}]
            }).
   exec(function (err, resultado) {
     ress.render('index', {
