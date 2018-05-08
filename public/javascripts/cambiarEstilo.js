@@ -5,10 +5,11 @@ $(document).ready(function(){
   if(localStorage.getItem("estilo")=="false"){
     $("#estilo2").prop('disabled', true);
   }
-}
+});
 
 function CambiarEstilo(){
   var styleSheet = document.getElementById('estilo2');
+
   if (styleSheet.disabled== true){
     $.get('./api/guardarEstilo', { id: 1 }, function(data) {
       console.log(data);
@@ -22,6 +23,7 @@ function CambiarEstilo(){
       }
     });
   }
+  
   else {
     $.get('./api/guardarEstilo', { id: 0 }, function(data) {
       console.log(data);
