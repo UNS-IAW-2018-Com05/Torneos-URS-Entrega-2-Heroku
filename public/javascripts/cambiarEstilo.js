@@ -5,7 +5,7 @@ $(document).ready(function(){
   if(localStorage.getItem("estilo")=="false"){
     $("#estilo2").prop('disabled', true);
   }
-  $("#container").show();
+  $("#cargador").show();
 });
 
 function CambiarEstilo(){
