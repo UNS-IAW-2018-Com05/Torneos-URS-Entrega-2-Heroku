@@ -28,8 +28,8 @@ opacity: 0.5; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
 filter:alpha(opacity=50); /* for <= IE 8 */
 }
 
-.carousel-item{
-    opacity: 0.8;
+.table{
+  background-color: rgba(0, 0, 0, .5);
 }
 .navbar{
     margin-bottom: 20px;
