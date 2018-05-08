@@ -83,6 +83,8 @@
           <th scope='col' style='text-align: right'>Local</th>
           <th scope='col'>Visitante</th>
           <th scope='col'>Resultado</th>
+          <th scope='col'>Fecha</th>
+          <th scope='col'>Hora</th>
           <th scope='col'>Estado</th>
         </tr>
       </thead>
@@ -94,6 +96,8 @@
           <td style="text-align: right"> {{partido.local.nombre}}<img HEIGHT="30" WIDTH="30" SRC="images/{{partido.local.escudo}}"></td>
           <td><img HEIGHT="30" WIDTH="30" SRC="images/{{partido.visitante.escudo}}">{{partido.visitante.nombre}}</td>
           <td>{{partido.puntosLocal}} - {{partido.puntosVisitante}}</td>
+          <td>{{partido.dia}}</td>
+          <td>{{partido.hora}}</td>
           <td>{{partido.estado}}</td>
         </tr>
         {% set index = index+1 %}
