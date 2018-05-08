@@ -15,6 +15,7 @@ const clubesRouter = require('./app_server/routes/clubes');
 const authRouter = require('./app_server/routes/auth');
 const apiRouter = require('./app_server/routes/api');
 const editorRouter = require('./app_server/routes/editor');
+const noticiasRouter = require('./app_server/routes/noticias');
 const passportSetup = require('./app_server/config/passport-setup');
 
 var app = express();
@@ -45,6 +46,7 @@ app.use('/clubes', clubesRouter);
 app.use('/api',apiRouter);
 app.use('/editor',editorRouter);
 app.use('/auth',authRouter);
+app.use('/noticias',noticiasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
