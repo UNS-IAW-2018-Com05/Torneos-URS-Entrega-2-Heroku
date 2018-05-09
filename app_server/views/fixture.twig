@@ -25,11 +25,11 @@
     <div class="card" id="partido-{{index}}">
       <img class="card-img-top" src="images/calendar.png" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">{{partido.local.nombre}} - {{partido.visitante.nombre}}</h5>
-        <p class="card-text">{{partido.puntosLocal}} - {{partido.puntosVisitante}}</p>
-        <p class="card-text"><strong>Dia</strong> {{partido.fecha}}</p>
-        <p class="card-text"><strong>Hora</strong> {{partido.hora}}</p>
-        <p class="card-text"><small class="text-muted">{{partido.estado}}</small></p>
+        <h5 class="card-title" id="titulo-{{index}}">{{partido.local.nombre}} - {{partido.visitante.nombre}}</h5>
+        <p class="card-text" id="puntos-{{index}}">{{partido.puntosLocal}} - {{partido.puntosVisitante}}</p>
+        <p class="card-text" id="dia-{{index}}"><strong>Dia</strong> {{partido.fecha}}</p>
+        <p class="card-text" id="hora-{{index}}"><strong>Hora</strong> {{partido.hora}}</p>
+        <p class="card-text" id="estado-{{index}}"><small class="text-muted">{{partido.estado}}</small></p>
       </div>
     </div>
     {% set index = index+1 %}
