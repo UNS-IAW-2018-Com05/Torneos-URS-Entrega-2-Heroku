@@ -1,5 +1,5 @@
 
-.navbar{
+#navbar{
 
     background-color: #491217;
 
@@ -21,8 +21,9 @@ body{
 }
 
 html, body, h1, h2, h3, h4, h5, h6 {
-  font-family: "Lobster", serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
 
 
 #btnCambiarEstilo {
@@ -37,8 +38,6 @@ html, body, h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
 }
 
-h1{
-
+h1, h2, h3, h4, h5, h6 {
   color: black;
-
 }
