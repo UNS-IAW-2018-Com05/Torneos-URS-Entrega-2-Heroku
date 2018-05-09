@@ -25,8 +25,8 @@ function mostrarPartidos(id){
             */
             document.getElementById("titulo-"+(i+1)).innerHTML=partidos[i].local.nombre+" - "+partidos[i].visitante.nombre;
             document.getElementById("puntos-"+(i+1)).innerHTML=partidos[i].puntosLocal+" - "+partidos[i].puntosVisitante;
-            document.getElementById("dia-"+(i+1)).innerHTML=partidos[i].fecha;
-            document.getElementById("hora-"+(i+1)).innerHTML=partidos[i].hora;
+            document.getElementById("dia-"+(i+1)).innerHTML="Dia "+partidos[i].fecha;
+            document.getElementById("hora-"+(i+1)).innerHTML="Hora "partidos[i].hora;
             document.getElementById("estado-"+(i+1)).innerHTML=partidos[i].estado;
         }
 
