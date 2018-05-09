@@ -12,18 +12,17 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-  {% if user.estilo %}
-  <link rel="stylesheet" type="text/css" href="stylesheets/MiEstilo2.css" id="estilo2">
-  {% else %}
-  <link rel="stylesheet" type="text/css" href="stylesheets/MiEstilo2.css" id="estilo2" disabled>
-  {% endif %}
   <link rel="stylesheet" type="text/css" href="stylesheets/estilo-general.css">
   <title>{{ title }}</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  {% if user.estilo %}
+  <link rel="stylesheet" type="text/css" href="stylesheets/MiEstilo2.css" id="estilo2">
+  {% else %}
+  <link rel="stylesheet" type="text/css" href="stylesheets/MiEstilo2.css" id="estilo2" disabled>
+  {% endif %}
   <style>
     .mySlides {display:none}
     .w3-left, .w3-right, .w3-badge {cursor:pointer}
