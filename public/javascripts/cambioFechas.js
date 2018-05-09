@@ -19,7 +19,7 @@ function mostrarPartidos(id){
             var cardBody = card[3].childNodes;
             cardBody[1].innerHTML = partidos[i].local.nombre+" - "+partidos[i].visitante.nombre;
             cardBody[3].innerHTML = partidos[i].puntosLocal+" - "+partidos[i].puntosVisitante;
-            cardBody[5].childNodes[1].innerHTML = partidos[i].estado;
+            cardBody[5].childNodes[0].innerHTML = partidos[i].estado;
         }
 
     }
