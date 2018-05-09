@@ -11,21 +11,6 @@ const getFecha = function (req, res) {
              populate:[{ path: 'local'},{ path: 'visitante'}]
            }).
   exec(function (err, resultado) {
-    var index;
-    for(index=0;index<resultado.partidos.length;index++){
-      date = resultado.partidos[index].dia;
-      year = date.getFullYear();
-      month = date.getMonth()+1;
-      dt = date.getDate();
-
-      if (dt < 10) {
-        dt = '0' + dt;
-      }
-      if (month < 10) {
-        month = '0' + month;
-      }
-      fecha = dt+'-' + month + '-'+year;
-      resultado.partidos[index].fecha = fecha;
     if (err) {
 				res
 					.status(404)
