@@ -21,6 +21,10 @@ h1, h2, h3, h5, h6 {
   color: whitesmoke;
 }
 
+h4 {
+  colo: black;
+}
+
 #image img {
 /* the actual 'watermark' */
 height: 75px;
