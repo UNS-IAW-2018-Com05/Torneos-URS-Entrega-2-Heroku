@@ -24,6 +24,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
   <style>
     .mySlides {display:none}
     .w3-left, .w3-right, .w3-badge {cursor:pointer}
@@ -31,7 +32,11 @@
   </style>
 
 </head>
+{% if user.estilo %}
+<body>
+{% else %}
 <body background="images/backgroundNigth.jpg" style="background-size: cover;background-size:100%, 80%;background-repeat: no-repeat;background-attachment: fixed;">
+{% endif %}
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
     <a class="navbar-brand" href="/">
