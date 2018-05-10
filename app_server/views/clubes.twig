@@ -4,16 +4,16 @@
 <div class="row" id="cartas" style="margin-top: 70px">
   {% for club in clubes %}
   <div class="col-sm-3 py-2">
-    <div class="card">
+    <div class="card h-100">
       <img class='card-im-top' src="images/{{club.escudo}}" alt='Card image cap'>
-      <div class="card-body h-100" style="position:relative;">
+      <div class="card-body">
         <h5 class="card-title"><strong>
           {{club.nombre}}
         </strong></h5>
         <p class="card-text">
           {{club.descripcion}}
         </p>
-        <div class="row" style="position:absolute;bottom:0;left:0;">
+        <div style="position:absolute;bottom:0;">
         <a class="btn btn-primary" href="{{club.link}}" target="_blank">
           Sitio Web
         </a>
