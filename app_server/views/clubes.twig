@@ -4,7 +4,7 @@
 <div class="row" id="cartas" style="margin-top: 70px">
   {% for club in clubes %}
   <div class="col-sm-3 py-2">
-    <div class="card h-100">
+    <div class="card h-80">
       <img class='card-im-top' src="images/{{club.escudo}}" alt='Card image cap'>
       <div class="card-body">
         <h5 class="card-title"><strong>
@@ -13,7 +13,7 @@
         <p class="scroll-box">
           {{club.descripcion}}
         </p>
-        <div style="position:absolute;bottom:0;left:0;">
+        <div style="position:absolute;bottom:0;left:0;margin-top: 10px">
         <a class="btn btn-primary" href="{{club.link}}" target="_blank">
           Sitio Web
         </a>
