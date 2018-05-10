@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="jumbotron" style="margin-top: 70px">
+  <div class="row">
+    <h1 class="display-4"><strong>{{equipofavorito.nombre}}</strong>   </h1>
+    &nbsp;
+    <img src="images/{{equipofavorito.escudo}}">
+  </div>
+  <p class="lead">{{equipofavorito.descripcion}}</p>
+  <hr class="my-4">
+  <p></p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{{equipofavorito.link}}" role="button">Sitio Web</a>
+  </p>
+</div>
+<hr style="border:4px;">
+<div id="espacioTabla">
+  <h3 id="etiquetaUltimaFecha" style="text-align: center"><b>Partidos de {{equipofavorito.nombre}}</b></h3>
+  <table class='table' id='tablaIndex'>
+    <thead class='thead-dark'>
+      <tr>
+        <th scope='col'>Fecha</th>
+        <th scope='col' style='text-align: right'>Local</th>
+        <th scope='col'>Visitante</th>
+        <th scope='col'>Resultado</th>
+        <th scope='col'>Hora</th>
+        <th scope='col'>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for fecha in fechas %}
+      <tr>
+        <td>{{fecha.numero}}</td>
+        {% if equipofavorito.nombre == fecha.partidos[0].local.nombre %}
+          <td style="text-align: right"><strong>{{fecha.partidos[0].local.nombre}}</strong></td>
+          <td>{{fecha.partidos[0].visitante.nombre}}</td>
+          <td><strong>{{fecha.partidos[0].puntosLocal}}</strong> - {{fecha.partidos[0].puntosVisitante}}</td>
+        {% else %}
+          <td style="text-align: right"> {{fecha.partidos[0].local.nombre}}</td>
+          <td><strong>{{fecha.partidos[0].visitante.nombre}}</strong></td>
+          <td>{{fecha.partidos[0].puntosLocal}} - <strong>{{fecha.partidos[0].puntosVisitante}}</strong></td>
+        {% endif %}
+        <td>{{fecha.partidos[0].hora}}</td>
+        <td>{{fecha.partidos[0].estado}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

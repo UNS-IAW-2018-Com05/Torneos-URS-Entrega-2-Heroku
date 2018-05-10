@@ -17,11 +17,11 @@
     width: 100%;
 }
 
-h1, h2, h4, h3, h6 {
+h2, h4, h3, h6 {
   color: whitesmoke;
 }
 
-h5 {
+h1,h5 {
   colo: black;
 }
 

@@ -32,6 +32,7 @@ passport.use(
                     username: profile.displayName,
                     editor: false,
                     estilo: false,
+                    equipofavorito:'5ae76ed6f9e8e94050fe86d5',
                     thumbnail: profile._json.image.url,
                     googleplusurl: profile._json.url
                 }).save().then((newUser) => {

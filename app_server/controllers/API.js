@@ -8,9 +8,10 @@ const getFecha = function (req, res) {
   Fecha.
   findOne({numero:req.query.id}).
   populate({ path: 'partidos',
-             populate:[{ path: 'local'},{ path: 'visitante'}]
+             populate:[{ path: 'local', select: 'nombre'},{ path: 'visitante', select: 'nombre'}]
            }).
   exec(function (err, resultado) {
+    var toSend = resultado.partidos;
     if (err) {
 				res
 					.status(404)
@@ -18,7 +19,7 @@ const getFecha = function (req, res) {
     } else {
 				res
 					.status(200)
-					.json(resultado);
+					.json(toSend);
 			}
 		})
 };
@@ -55,6 +56,18 @@ const guardarEstilo = function(req,res){
   }
 }
 
+const guardarFavorito = function(req,res){
+  User.findByIdAndUpdate(
+    req.user._id,
+    {equipofavorito:req.query.id},
+    (err, usuario) => {
+        if (err)
+          return res.status(500).send(err);
+        res.send('ok');
+    }
+  );
+}
+
 module.exports = {
-	getFecha,savePartido,guardarEstilo
+	getFecha,savePartido,guardarEstilo,guardarFavorito
 };

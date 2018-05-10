@@ -18,6 +18,9 @@
           Sitio Web
         </a>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal-lg-{{club._id}}">Plantel</button>
+        {% if user %}
+        <button type="button" class="btn btn-warning" id="{{club._id}}" onclick="guardarFavorito(this.id)"><i class="fas fa-star"></i> Favorito</button>
+        {% endif %}
         <div class="modal fade modal-lg-{{club._id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">

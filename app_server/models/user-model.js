@@ -6,6 +6,10 @@ const userSchema = new Schema({
     googleId: String,
     editor: Boolean,
     estilo: Boolean,
+    equipofavorito: {
+      type: Schema.Types.ObjectId,
+      ref: 'Club'
+    },
     thumbnail: String,
     googleplusurl: String
 });
