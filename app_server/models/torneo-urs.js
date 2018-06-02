@@ -69,6 +69,10 @@ const partidoSchema = new mongoose.Schema({
   arbitro: {
     nombre: String,
     apellido: String
+  },
+  editor: {
+    type: String,
+    required: true
   }
 });
 
