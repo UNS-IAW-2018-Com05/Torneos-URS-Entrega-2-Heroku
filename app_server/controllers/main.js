@@ -7,7 +7,6 @@ var fechaReciente;
 var ress;
 var user;
 
-/* GET home page. */
 const index = function (req, res) {
   ress = res;
   user = req.user;
