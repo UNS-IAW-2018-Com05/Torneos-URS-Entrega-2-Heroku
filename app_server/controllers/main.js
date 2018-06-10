@@ -26,6 +26,7 @@ function obtenerFechaMasReciente(fechas) {
   var index;
   var termine=false;
   var masReciente=99999999999;
+  fechaReciente=0;
   for(index=0;index<fechas.length && !termine;++index){
     var dia = fechas[index].diasDeJuego[1];
     var distancia = new Date()-dia;
