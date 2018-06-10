@@ -27,6 +27,7 @@ function obtenerFechaMasReciente(fechas) {
     var index;
     var termine=false;
     var masReciente=99999999999;
+    var fechaReciente = 0;
     for(index=0;index<fechas.length && !termine;++index){
         var dia = fechas[index].diasDeJuego[1];
         var distancia = new Date()-dia;
@@ -53,18 +54,20 @@ function obtenerPartidos(fechaMasReciente,fechas){
     var index;
     for(index=0;index<resultado.partidos.length;index++){
       date = resultado.partidos[index].dia;
-      year = date.getFullYear();
-      month = date.getMonth()+1;
-      dt = date.getDate();
+      if(date !=""){
+        year = date.getFullYear();
+        month = date.getMonth()+1;
+        dt = date.getDate();
 
-      if (dt < 10) {
-        dt = '0' + dt;
+        if (dt < 10) {
+          dt = '0' + dt;
+        }
+        if (month < 10) {
+          month = '0' + month;
+        }
+        fecha = dt+'-' + month + '-'+year;
+        resultado.partidos[index].fecha = fecha;
       }
-      if (month < 10) {
-        month = '0' + month;
-      }
-      fecha = dt+'-' + month + '-'+year;
-      resultado.partidos[index].fecha = fecha;
     }
     ress.render('fixture', {
       title: 'Torneos URS',
