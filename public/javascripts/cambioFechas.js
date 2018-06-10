@@ -17,17 +17,22 @@ function mostrarPartidos(id){
         var index;
         for(i=0;i<partidos.length;i++){
           var date = new Date(partidos[i].dia);
-          year = date.getFullYear();
-          month = date.getMonth()+1;
-          dt = date.getDate();
+          const fecha = "";
+          if(date){
+            year = date.getFullYear();
+            month = date.getMonth()+1;
+            dt = date.getDate();
 
-          if (dt < 10) {
-            dt = '0' + dt;
+            if (dt < 10) {
+              dt = '0' + dt;
+            }
+            if (month < 10) {
+              month = '0' + month;
+            }
           }
-          if (month < 10) {
-            month = '0' + month;
+          else{
+            fecha = dt+'-' + month + '-'+year;
           }
-          const fecha = dt+'-' + month + '-'+year;
 
             document.getElementById("titulo-"+(i+1)).innerHTML =  partidos[i].local.nombre+" - "+partidos[i].visitante.nombre;
             document.getElementById("puntos-"+(i+1)).innerHTML =  partidos[i].puntosLocal+" - "+partidos[i].puntosVisitante;
