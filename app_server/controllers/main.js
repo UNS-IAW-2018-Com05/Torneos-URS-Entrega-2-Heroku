@@ -53,7 +53,7 @@ exec(function (err, resultado) {
   var index;
   for(index=0;index<resultado.partidos.length;index++){
     date = resultado.partidos[index].dia;
-    if(date!=""){
+    if(!(date ==== "")){
       year = date.getFullYear();
       month = date.getMonth()+1;
       dt = date.getDate();
