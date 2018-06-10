@@ -54,7 +54,10 @@ function obtenerPartidos(fechaMasReciente,fechas){
     var index;
     for(index=0;index<resultado.partidos.length;index++){
       date = resultado.partidos[index].dia;
-      if(!(date ==== "")){
+      if(date ==== ""){
+        resultado.partidos[index].fecha = "";
+      }
+      else{
         year = date.getFullYear();
         month = date.getMonth()+1;
         dt = date.getDate();
