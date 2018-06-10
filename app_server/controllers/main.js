@@ -53,7 +53,7 @@ exec(function (err, resultado) {
   var index;
   for(index=0;index<resultado.partidos.length;index++){
     date = resultado.partidos[index].dia;
-    if(date ==== ""){
+    if(!date){
       resultado.partidos[index].fecha = "";
     }
     else{
@@ -71,6 +71,7 @@ exec(function (err, resultado) {
       resultado.partidos[index].fecha = fecha;
     }
   }
+  console.log(resultado.partidos);
   ress.render('index', {
     title: 'Torneos URS',
     fecha: fechaReciente,
