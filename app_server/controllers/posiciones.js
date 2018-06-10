@@ -67,7 +67,7 @@ const posiciones = function (req, res) {
               for (j = 0; j<clubes.length; j++){
 
                 var puntajeClub = mapeo.get((clubes[j]._id).toString());
-                if (puntajeClub>puntajeMaximo){
+                if (puntajeClub>=puntajeMaximo){
 
                   puntajeMaximo=puntajeClub;
                   clubConPuntajeMaximo=clubes[j];
