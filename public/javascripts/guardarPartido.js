@@ -14,7 +14,4 @@ function guardarPartido(boton) {
               $(boton).css('cursor','pointer');
           });
   }
-  else{
-    alert("Ha ingresado valores nulos");
-  }
 }
